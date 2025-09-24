@@ -1,0 +1,16 @@
+body {
+    background-color: black;
+}
+
+/* Container para logo + barra */
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* joga a barra para a direita */
+
+}
+
+h1 {
+    color: white;
+}

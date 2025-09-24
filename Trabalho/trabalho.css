@@ -1,0 +1,62 @@
+ body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    .TelaFundo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    
+    .logo {
+      position: absolute;
+      bottom: 850px;  /* distancia do rodapé */
+      left: 20px;    /* distancia da esquerda */
+      width: 80px;   /* tamanho da logo */
+    }
+
+    .logo1 {
+      position: absolute;
+      bottom: 850px;  /* distancia do rodapé */
+      left: 130px;    /* distancia da esquerda */
+      width: 80px;   /* tamanho da logo */
+    }
+
+    .logo2 {
+      position: absolute;
+      bottom: 730px;  /* distancia do rodapé */
+      left: 20px;    /* distancia da esquerda */
+      width: 80px;   /* tamanho da logo */
+    }
+
+    .logo3 {
+      position: absolute;
+      bottom: 730px;  /* distancia do rodapé */
+      left: 130px;;    /* distancia da esquerda */
+      width: 80px;   /* tamanho da logo */
+    }
+
+    .logo4 {
+      position: absolute;
+      bottom: 610px;  /* distancia do rodapé */
+      left: 20px;    /* distancia da esquerda */
+      width: 80px;   /* tamanho da logo */
+    }
+
+    .logo5 {
+      position: absolute;
+      bottom: 850px;  /* distancia do rodapé */
+      left: 240px;    /* distancia da esquerda */
+      width: 80px;   /* tamanho da logo */
+    }
+
+    .logo6 {
+      position: absolute;
+      bottom: 510px;  /* distancia do rodapé */
+      left: 20px;    /* distancia da esquerda */
+      width: 80px;   /* tamanho da logo */
+    }
