@@ -1,0 +1,81 @@
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Container central */
+.container {
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 40px;
+  border-radius: 10px;
+  width: 350px;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+  text-align: center;
+}
+
+/* Título */
+h1 {
+  color: #e50914;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Labels */
+label {
+  display: block;
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  background-color: #333;
+  color: #fff;
+}
+
+/* Botões */
+button,
+a.btn {
+  display: inline-block;
+  background-color: #e50914;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover,
+a.btn:hover {
+  background-color: #b20710;
+}
+
+/* Link de cancelar */
+a.cancelar {
+  display: inline-block;
+  margin-left: 10px;
+  color: #999;
+  text-decoration: none;
+}
+
+a.cancelar:hover {
+  text-decoration: underline;
+  color: #ccc;
+}

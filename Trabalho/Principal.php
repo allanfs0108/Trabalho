@@ -1,8 +1,13 @@
 <?php
-// Principal.php
+// Inicia a sessão e verifica se o usuário está logado
+session_start();
+if(!isset($_SESSION['user_id'])){
+    header("Location: login.php");
+    exit();
+}
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,16 +15,19 @@
     <link rel="stylesheet" href="Principal.css">
 </head>
 <body style="background-color: black;">
-    
+
+    <!-- Top Bar -->
     <div class="top-bar">
         <a href="Perfil.php"><img src="Dantley.png" alt="Logo" width="100px"></a>
         <img src="barra.webp" alt="Barra de pesquisa" width="275px">
     </div>
 
+    <!-- Botão para Lista.php -->
     <a href="Lista.php">
         <img src="Mais.png" alt="" width="75px" style="position: absolute; top: 55px; right: 300px;">
     </a>
 
+    <!-- Séries premiadas -->
     <table>
         <tr>
             <td colspan="6"><h1 style="color: white;">Séries premiadas</h1></td>
@@ -34,6 +42,7 @@
         </tr>
     </table>
 
+    <!-- Filmes de comédia -->
     <table>
         <tr>
             <td colspan="6"><h1 style="color: white;">Filmes de comédia</h1></td>
