@@ -35,8 +35,8 @@ require_once 'conn.php';
     </div>
 </nav>
 
+<a href="Principal.php"><img src="Seta.png" alt="" width="80px"></a>
 <div class="container mt-4">
-
     <!-- Card de adicionar filme -->
     <div class="card add-card mb-4 p-3">
         <h5 class="card-title">Adicionar Novo Filme</h5>

@@ -33,7 +33,7 @@ if(!isset($_SESSION['user_id'])){
             <td colspan="6"><h1 style="color: white;">Séries premiadas</h1></td>
         </tr>
         <tr>
-            <td><img src="dexter.webp" alt="" width="350px"></td>
+            <td><a href="Dexter.php"><img src="dexter.webp" alt="" width="350px"></a></td>
             <td><img src="b99.jpg" alt="" width="300px"></td>
             <td><img src="wandinha.webp" alt="" width="300px"></td>
             <td><img src="office.webp" alt="" width="300px"></td>

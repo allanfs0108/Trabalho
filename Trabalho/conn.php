@@ -27,8 +27,10 @@ CREATE TABLE IF NOT EXISTS filmes (
     ano INT NOT NULL,
     categoria VARCHAR(255),
     available TINYINT(1) DEFAULT 1,
+    imagem VARCHAR(255), -- novo campo para armazenar o nome do arquivo da imagem
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-)");
+)
+");
 
 // Criação da tabela de usuários, se não existir
 $conn->query("
@@ -37,5 +39,6 @@ CREATE TABLE IF NOT EXISTS users (
     email VARCHAR(255) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-)");
+)
+");
 ?>
