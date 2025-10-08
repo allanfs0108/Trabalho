@@ -16,7 +16,7 @@ if(isset($_SESSION['user_id'])){
 <body>
     <!-- Logo -->
     <div class="logo">
-        <img src="netflix logo.png" alt="Logo Netflix">
+        <img src="imagens/netflix logo.png" alt="Logo Netflix">
     </div>
 
     <!-- Formulário de registro -->

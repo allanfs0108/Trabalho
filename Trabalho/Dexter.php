@@ -10,6 +10,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dexter</title>
 </head>
+<style>
+    .dexter {
+        position: absolute;
+        bottom: 400px;
+        /* distancia do rodapé */
+        left: 950px;
+        /* distancia da esquerda */
+        width: 800px;
+        /* tamanho da logo */
+    }
+</style>
 
 <body style="background-color: black;">
 
@@ -20,7 +31,16 @@
     <br>
 
     <!-- Vídeo -->
-        <iframe src="videoplayback.mp4" frameborder="0" width="800px" height="400px"></iframe>
+    <table>
+        <tr>
+            <td>
+                <iframe src="videoplayback.mp4" frameborder="0" width="800px" height="400px"></iframe>
+            </td>
+            <td>
+                <img src="Poster.webp" alt="" width="600px" class="dexter">
+            </td>
+        </tr>
+    </table>
 
     <!-- Título e Descrição -->
     <h2 style="color: white;">Dexter</h2>
@@ -29,7 +49,8 @@
         noite, ele é um assassino em série que só atinge outros assassinos.
     </p>
 
-    <h3 style="color: white;">Episódios</h3>
+            <h3 style="color: white; margin-right: 20px;">Episódios</h3>
+        
 
     <!-- Tabela de Episódios -->
     <table>

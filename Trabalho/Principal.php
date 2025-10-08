@@ -18,13 +18,13 @@ if(!isset($_SESSION['user_id'])){
 
     <!-- Top Bar -->
     <div class="top-bar">
-        <a href="Perfil.php"><img src="Dantley.png" alt="Logo" width="100px"></a>
-        <img src="barra.webp" alt="Barra de pesquisa" width="275px">
+        <a href="Perfil.php"><img src="imagens/Dantley.png" alt="Logo" width="100px"></a>
+        <img src="imagens/barra.webp" alt="Barra de pesquisa" width="275px">
     </div>
 
     <!-- Botão para Lista.php -->
     <a href="Lista.php">
-        <img src="Mais.png" alt="" width="75px" style="position: absolute; top: 55px; right: 300px;">
+        <img src="imagens/Mais.png" alt="" width="75px" style="position: absolute; top: 55px; right: 300px;">
     </a>
 
     <!-- Séries premiadas -->
@@ -33,12 +33,12 @@ if(!isset($_SESSION['user_id'])){
             <td colspan="6"><h1 style="color: white;">Séries premiadas</h1></td>
         </tr>
         <tr>
-            <td><a href="Dexter.php"><img src="dexter.webp" alt="" width="350px"></a></td>
-            <td><img src="b99.jpg" alt="" width="300px"></td>
-            <td><img src="wandinha.webp" alt="" width="300px"></td>
-            <td><img src="office.webp" alt="" width="300px"></td>
-            <td><img src="stranger.jpg" alt="" width="300px"></td>
-            <td><img src="breaking.jpg" alt="" width="350px"></td>
+            <td><a href="Dexter.php"><img src="imagens/dexter.webp" alt="" width="350px"></a></td>
+            <td><img src="imagens/b99.jpg" alt="" width="300px"></td>
+            <td><img src="imagens/wandinha.webp" alt="" width="300px"></td>
+            <td><img src="imagens/office.webp" alt="" width="300px"></td>
+            <td><img src="imagens/stranger.jpg" alt="" width="300px"></td>
+            <td><img src="imagens/breaking.jpg" alt="" width="350px"></td>
         </tr>
     </table>
 
@@ -48,12 +48,12 @@ if(!isset($_SESSION['user_id'])){
             <td colspan="6"><h1 style="color: white;">Filmes de comédia</h1></td>
         </tr>
         <tr>
-            <td><img src="click.jpg" alt="" width="315px"></td>
-            <td><img src="esposa.jpg" alt="" width="315px"></td>
-            <td><img src="golfe.webp" alt="" width="300px"></td>
-            <td><img src="grande.jpg" alt="" width="315px"></td>
-            <td><img src="office.webp" alt="" width="300px"></td>
-            <td><img src="zumbi.jpg" alt="" width="285px"></td>
+            <td><img src="imagens/click.jpg" alt="" width="315px"></td>
+            <td><img src="imagens/esposa.jpg" alt="" width="315px"></td>
+            <td><img src="imagens/golfe.webp" alt="" width="300px"></td>
+            <td><img src="imagens/grande.jpg" alt="" width="315px"></td>
+            <td><img src="imagens/office.webp" alt="" width="300px"></td>
+            <td><img src="imagens/zumbi.jpg" alt="" width="285px"></td>
         </tr>
     </table>
 
