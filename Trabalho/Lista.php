@@ -25,6 +25,12 @@ require_once 'conn.php';
     .container-cards { display: flex; flex-wrap: wrap; gap: 20px; }
     .card img { height: 200px; object-fit: cover; }
     .btn-card { width: 100%; margin-top: 10px; }
+    .logo{
+        position: absolute;
+        top: 70px;
+        left: 700px;
+        width: 500px;
+    }
 </style>
 </head>
 <body>
@@ -34,8 +40,14 @@ require_once 'conn.php';
         <a href="logout.php" class="btn btn-dark"><i class="fas fa-sign-out-alt"></i> Logout</a>
     </div>
 </nav>
+<table>
+<tr>
+    <td><a href="Principal.php"><img src="imagens/Seta.png" alt="" width="80px"></a></td>
+    <td><img src="imagens/netflix logo.png" alt="" class="logo"></td>
+</tr>
+</table>
 
-<a href="Principal.php"><img src="Seta.png" alt="" width="80px"></a>
+    <br><br><br>
 <div class="container mt-4">
     <!-- Card de adicionar filme -->
     <div class="card add-card mb-4 p-3">

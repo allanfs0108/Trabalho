@@ -1,16 +1,114 @@
+/* ===== Estilos gerais ===== */
 body {
+    margin: 0;
+    font-family: Arial, sans-serif;
     background-color: black;
+    color: white;
 }
 
-/* Container para logo + barra */
+h1 {
+    margin: 20px;
+    font-size: 1.8em;
+}
+
+/* ===== Top Bar ===== */
 .top-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* joga a barra para a direita */
-
+    padding: 15px 25px;
+    position: relative;
 }
 
-h1 {
-    color: white;
+.logo {
+    width: 100px;
+}
+
+.barra {
+    width: 250px;
+    max-width: 50%;
+}
+
+.btn-lista {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.btn-lista img {
+    width: 60px;
+    transition: transform 0.2s;
+}
+
+.btn-lista img:hover {
+    transform: scale(1.1);
+}
+
+/* ===== Grade de filmes/séries ===== */
+.categoria {
+    margin-bottom: 40px;
+}
+
+.grid {
+    display: flex;
+    gap: 15px;
+    padding: 0 15px;
+}
+
+.grid img {
+    width: 300px;
+    max-width: 100%;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+.grid img:hover {
+    transform: scale(1.05);
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 1024px) {
+    .grid img {
+        width: 45%;
+    }
+
+    .barra {
+        width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    .top-bar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .barra {
+        width: 70%;
+    }
+
+    .grid img {
+        width: 48%;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid img {
+        width: 100%;
+    }
+
+    .btn-lista img {
+        width: 50px;
+    }
+}
+
+.mais {
+    position: absolute;
+    top: 45px;
+    right: 280px;
 }
