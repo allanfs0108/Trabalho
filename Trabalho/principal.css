@@ -1,38 +1,48 @@
-/* ===== Estilos gerais ===== */
-body {
+/* ===== RESET ===== */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: Arial, sans-serif;
     background-color: black;
     color: white;
+    overflow-x: hidden;
 }
 
+/* ===== TITULOS ===== */
 h1 {
     margin: 20px;
     font-size: 1.8em;
 }
 
-/* ===== Top Bar ===== */
+/* ===== TOP BAR ===== */
 .top-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     padding: 15px 25px;
     position: relative;
+    background-color: #000;
+    z-index: 10;
 }
 
 .logo {
     width: 100px;
+    height: auto;
 }
 
 .barra {
-    width: 250px;
-    max-width: 50%;
+    width: 300px;
+    max-width: 60%;
+    border-radius: 8px;
 }
 
 .btn-lista {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    position: relative;
 }
 
 .btn-lista img {
@@ -44,71 +54,126 @@ h1 {
     transform: scale(1.1);
 }
 
-/* ===== Grade de filmes/séries ===== */
+/* ===== SEÇÕES ===== */
 .categoria {
     margin-bottom: 40px;
 }
 
+.categoria h1 {
+    margin-left: 20px;
+}
+
+/* ===== GRID ===== */
 .grid {
     display: flex;
     gap: 15px;
     padding: 0 15px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #666 #111;
 }
 
-.grid img {
+.grid::-webkit-scrollbar {
+    height: 8px;
+}
+.grid::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 4px;
+}
+.grid::-webkit-scrollbar-track {
+    background: #111;
+}
+
+.grid img,
+.grid-item-link {
     width: 300px;
-    max-width: 100%;
     border-radius: 10px;
-    transition: transform 0.2s;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
 }
 
-.grid img:hover {
+.grid img:hover,
+.grid-item-link:hover {
     transform: scale(1.05);
 }
 
-/* ===== Responsividade ===== */
+.grid-item-link {
+    display: block;
+    text-decoration: none;
+}
+
+.grid-item-link img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* ===== RESPONSIVIDADE ===== */
 @media (max-width: 1024px) {
-    .grid img {
-        width: 45%;
+    h1 {
+        font-size: 1.6em;
     }
 
     .barra {
-        width: 200px;
+        width: 220px;
+    }
+
+    .grid img,
+    .grid-item-link {
+        width: 220px;
     }
 }
 
 @media (max-width: 768px) {
-    h1 {
-        font-size: 1.5em;
-        text-align: center;
-    }
-
     .top-bar {
         flex-direction: column;
+        align-items: center;
         gap: 10px;
     }
 
+    .logo {
+        width: 80px;
+    }
+
     .barra {
-        width: 70%;
+        width: 80%;
     }
 
-    .grid img {
-        width: 48%;
-    }
-}
-
-@media (max-width: 480px) {
-    .grid img {
-        width: 100%;
+    .btn-lista {
+        position: static;
+        margin-top: 10px;
     }
 
     .btn-lista img {
         width: 50px;
     }
+
+    .grid img,
+    .grid-item-link {
+        width: 200px;
+    }
 }
 
-.mais {
-    position: absolute;
-    top: 45px;
-    right: 280px;
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.4em;
+        text-align: center;
+    }
+
+    .grid {
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .grid img,
+    .grid-item-link {
+        width: 150px;
+    }
+
+    .btn-lista img {
+        width: 45px;
+    }
 }

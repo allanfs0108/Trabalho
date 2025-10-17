@@ -20,7 +20,7 @@
     <!-- Container do vídeo e pôster -->
     <section class="video-section">
         <div class="video-container">
-            <iframe src="videoplayback.mp4" frameborder="0" allowfullscreen></iframe>
+            <iframe src="videoplayback (1).mp4" frameborder="0" allowfullscreen></iframe>
         </div>
     </section>
 
@@ -58,24 +58,24 @@
                 <p>5. Love American Style</p>
             </div>
             <div class="ep">
-                <img src="imagens/return.jpg" alt="Episódio 6">
+                <img src="imagens/sender.webp" alt="Episódio 6">
                 <p>6. Return to Sender</p>
             </div>
             <div class="ep">
-                <img src="imagens/ep 1.jpg" alt="Episódio 1">
-                <p>1. Dexter</p>
+                <img src="imagens/friends.png" alt="Episódio 7">
+                <p>7. Circle of Friends</p>
             </div>
             <div class="ep">
-                <img src="imagens/crocodile.jpg" alt="Episódio 2">
-                <p>2. Crocodile</p>
+                <img src="imagens/wrap.jpg" alt="Episódio 8">
+                <p>8. Shrink Wrap</p>
             </div>
             <div class="ep">
-                <img src="imagens/popping.jpg" alt="Episódio 3">
-                <p>3. Popping Cherry</p>
+                <img src="imagens/father.png" alt="Episódio 9">
+                <p>9. Father Knows Best</p>
             </div>
             <div class="ep">
-                <img src="imagens/boy.jpg" alt="Episódio 4">
-                <p>4. Let's Give the Boy a Hand</p>
+                <img src="imagens/red.png" alt="Episódio 10">
+                <p>10. Seeing Red</p>
             </div>
         </div>
     </section>

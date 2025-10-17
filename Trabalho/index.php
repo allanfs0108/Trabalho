@@ -3,12 +3,14 @@
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobreposição</title>
     <link rel="stylesheet" href="trabalho.css">
 </head>
+
 <body>
 
     <img src="imagens/Tela de Fundo.jpg" class="TelaFundo" alt="Fundo do Windows">
@@ -26,4 +28,5 @@
     </table>
 
 </body>
+
 </html>

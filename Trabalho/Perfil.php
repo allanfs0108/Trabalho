@@ -33,12 +33,12 @@
     <br><br><br><br><br>
   <!-- Logo em cima -->
   <div class="logo">
-    <img src="netflix logo.png" alt="Logo Netflix">
+    <img src="imagens/netflix logo.png" alt="Logo Netflix">
   </div>
 
   <!-- Perfis embaixo -->
   <div class="perfis">
-    <a href="Principal.php"><img src="perfil.jpg" alt="Perfis Netflix" class="img1"></a>
+    <a href="Principal.php"><img src="imagens/perfil.jpg" alt="Perfis Netflix" class="img1"></a>
   </div>
 </body>
 </html>

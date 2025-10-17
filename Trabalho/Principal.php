@@ -1,21 +1,22 @@
 <?php
 session_start();
-if(!isset($_SESSION['user_id'])){
+if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit();
 }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Principal</title>
     <link rel="stylesheet" href="Principal.css">
 </head>
+
 <body style="background-color: black;">
 
-    <!-- Top Bar -->
     <div class="top-bar">
         <a href="Perfil.php"><img src="imagens/Dantley.png" alt="Logo" class="logo"></a>
         <img src="imagens/barra.webp" alt="Barra de pesquisa" class="barra">
@@ -24,12 +25,11 @@ if(!isset($_SESSION['user_id'])){
         </a>
     </div>
 
-    <!-- Séries premiadas -->
     <section class="categoria">
         <h1>Séries premiadas</h1>
         <div class="grid">
-            <a href="Dexter.php"><img src="imagens/dexter.webp" alt="Dexter"></a>
-            <img src="imagens/b99.jpg" alt="Brooklyn 99">
+            <a href="Dexter.php" class="grid-item-link"><img src="imagens/dexter.jpg" alt="Dexter"></a>
+            <a href="Brooklyn.php" class="grid-item-link"><img src="imagens/b99.jpg" alt="Brooklyn 99"></a>
             <img src="imagens/wandinha.webp" alt="Wandinha">
             <img src="imagens/office.webp" alt="The Office">
             <img src="imagens/stranger.jpg" alt="Stranger Things">
@@ -37,7 +37,6 @@ if(!isset($_SESSION['user_id'])){
         </div>
     </section>
 
-    <!-- Filmes de comédia -->
     <section class="categoria">
         <h1>Filmes de comédia</h1>
         <div class="grid">
@@ -51,4 +50,5 @@ if(!isset($_SESSION['user_id'])){
     </section>
 
 </body>
+
 </html>
