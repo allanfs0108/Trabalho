@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS filmes (
     ano INT NOT NULL,
     categoria VARCHAR(255),
     available TINYINT(1) DEFAULT 1,
-    imagem VARCHAR(255), -- novo campo para armazenar o nome do arquivo da imagem
+    imagem VARCHAR(255), 
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )
 ");

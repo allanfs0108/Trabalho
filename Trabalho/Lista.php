@@ -22,14 +22,46 @@ require_once 'conn.php';
     .card-title { font-size: 1.2rem; font-weight: bold; }
     .card-text { font-size: 0.9rem; }
     .add-card { background-color: #e50914; color: white; }
-    .container-cards { display: flex; flex-wrap: wrap; gap: 20px; }
+    .container-cards { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
     .card img { height: 200px; object-fit: cover; }
     .btn-card { width: 100%; margin-top: 10px; }
-    .logo{
+
+    /* TOPO: seta fixa à esquerda e logo centralizado */
+    .header {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px 0;
+    }
+
+    .header .seta {
         position: absolute;
-        top: 70px;
-        left: 700px;
-        width: 500px;
+        left: 20px;
+        width: 80px;
+        transition: transform 0.2s;
+    }
+
+    .header .seta:hover {
+        transform: scale(1.1);
+    }
+
+    .header .logo {
+        max-width: 300px;
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+        .header .logo {
+            max-width: 180px;
+        }
+        .header .seta {
+            width: 60px;
+            left: 10px;
+        }
     }
 </style>
 </head>
@@ -40,19 +72,18 @@ require_once 'conn.php';
         <a href="logout.php" class="btn btn-dark"><i class="fas fa-sign-out-alt"></i> Logout</a>
     </div>
 </nav>
-<table>
-<tr>
-    <td><a href="Principal.php"><img src="imagens/Seta.png" alt="" width="80px"></a></td>
-    <td><img src="imagens/netflix logo.png" alt="" class="logo"></td>
-</tr>
-</table>
 
-    <br><br><br>
+<!-- TOPO com seta à esquerda e logo centralizado -->
+<div class="header">
+    <a href="Principal.php"><img src="imagens/Seta.png" alt="Voltar" class="seta"></a>
+    <img src="imagens/netflix logo.png" alt="Netflix Logo" class="logo">
+</div>
+
 <div class="container mt-4">
     <!-- Card de adicionar filme -->
     <div class="card add-card mb-4 p-3">
         <h5 class="card-title">Adicionar Novo Filme</h5>
-        <form action="add.php" method="POST">
+        <form action="add.php" method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <input type="text" name="titulo" class="form-control" placeholder="Título" required>
             </div>
@@ -71,19 +102,28 @@ require_once 'conn.php';
                     <option value="0">Indisponível</option>
                 </select>
             </div>
+            <div class="form-group">
+                <label>Imagem de Capa (opcional)</label>
+                <input type="file" name="imagens" class="form-control-file" accept="image/*">
+            </div>
             <button type="submit" class="btn btn-dark btn-block">Adicionar Filme</button>
         </form>
     </div>
 
-    <!-- Lista de filmes em cards -->
+    <!-- Lista de filmes -->
     <div class="container-cards">
         <?php
         $query = "SELECT * FROM filmes ORDER BY created_at DESC";
         $result = $conn->query($query);
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){
+                // Caminho correto da pasta de capas
+                $imagens = !empty($row['imagens']) 
+                    ? 'Capa de Filmes/'.urlencode($row['imagens']) 
+                    : 'https://via.placeholder.com/300x200.png?text='.urlencode($row['titulo']);
+
                 echo '<div class="card" style="width: 18rem;">
-                        <img src="https://via.placeholder.com/300x200.png?text='.$row['titulo'].'" class="card-img-top" alt="Capa Filme">
+                        <img src="'.$imagens.'" class="card-img-top" alt="Capa do Filme">
                         <div class="card-body">
                             <h5 class="card-title">'.htmlspecialchars($row['titulo']).'</h5>
                             <p class="card-text">
@@ -98,7 +138,7 @@ require_once 'conn.php';
                     </div>';
             }
         } else {
-            echo '<p>Nenhum filme encontrado.</p>';
+            echo '<p class="text-center">Nenhum filme encontrado.</p>';
         }
         $conn->close();
         ?>

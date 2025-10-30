@@ -18,6 +18,9 @@ if (!$filme) {
     exit();
 }
 
+// Pasta onde as imagens serão armazenadas
+$uploadDir = "Capa de Filmes/";
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $titulo = trim($_POST['titulo'] ?? $filme['titulo']);
     $diretor = trim($_POST['diretor'] ?? $filme['diretor']);
@@ -25,8 +28,39 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $categoria = trim($_POST['categoria'] ?? $filme['categoria']);
     $available = isset($_POST['available']) ? intval($_POST['available']) : $filme['available'];
 
-    $stmt = $conn->prepare("UPDATE filmes SET titulo=?, diretor=?, ano=?, categoria=?, available=? WHERE id=?");
-    $stmt->bind_param("ssisii", $titulo, $diretor, $ano, $categoria, $available, $id);
+    // Tratamento da imagem
+    $imagens = $filme['imagens']; // Mantém a imagem antiga por padrão
+    if (isset($_FILES['imagens']) && $_FILES['imagens']['error'] === 0) {
+        $fileTmpPath = $_FILES['imagens']['tmp_name'];
+        $fileName = basename($_FILES['imagens']['name']);
+        $fileExt = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
+        $allowedExt = ['jpg', 'jpeg', 'png', 'gif'];
+
+        if (in_array($fileExt, $allowedExt)) {
+            $newFileName = uniqid() . "." . $fileExt;
+            $destPath = $uploadDir . $newFileName;
+            if (move_uploaded_file($fileTmpPath, $destPath)) {
+                // Apaga a imagem antiga se existir
+                if ($filme['imagens'] && file_exists($uploadDir . $filme['imagens'])) {
+                    unlink($uploadDir . $filme['imagens']);
+                }
+                $imagens = $newFileName;
+            } else {
+                $_SESSION['message'] = "Erro ao fazer upload da imagem.";
+                $_SESSION['message_type'] = "danger";
+                header("Location: Lista.php");
+                exit();
+            }
+        } else {
+            $_SESSION['message'] = "Formato de imagem inválido. Use jpg, jpeg, png ou gif.";
+            $_SESSION['message_type'] = "danger";
+            header("Location: Lista.php");
+            exit();
+        }
+    }
+
+    $stmt = $conn->prepare("UPDATE filmes SET titulo=?, diretor=?, ano=?, categoria=?, available=?, imagens=? WHERE id=?");
+    $stmt->bind_param("ssisisi", $titulo, $diretor, $ano, $categoria, $available, $imagens, $id);
 
     if ($stmt->execute()) {
         $_SESSION['message'] = "Filme atualizado com sucesso!";
@@ -54,6 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     .navbar { background-color: #e50914 !important; }
     .card { background-color: #1c1c1c; border: none; color: white; }
     .btn-save { background-color: #e50914; border: none; }
+    img { max-width: 150px; margin-bottom: 10px; }
 </style>
 </head>
 <body>
@@ -64,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <div class="container mt-5">
     <div class="card p-4">
         <h3 class="mb-4">Editar Filme</h3>
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <label>Título</label>
                 <input type="text" name="titulo" class="form-control" value="<?= htmlspecialchars($filme['titulo']) ?>" required>
@@ -87,6 +122,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <option value="1" <?= $filme['available'] ? 'selected' : '' ?>>Disponível</option>
                     <option value="0" <?= !$filme['available'] ? 'selected' : '' ?>>Indisponível</option>
                 </select>
+            </div>
+            <div class="form-group">
+                <label>Imagem Atual</label><br>
+                <?php if ($filme['imagens'] && file_exists($uploadDir . $filme['imagens'])): ?>
+                    <img src="<?= $uploadDir . $filme['imagens'] ?>" alt="Capa do Filme">
+                <?php else: ?>
+                    <p>Sem imagem</p>
+                <?php endif; ?>
+            </div>
+            <div class="form-group">
+                <label>Alterar Imagem</label>
+                <input type="file" name="imagens" class="form-control" accept="image/*">
             </div>
             <button type="submit" class="btn btn-save btn-block">Salvar Alterações</button>
             <a href="Lista.php" class="btn btn-secondary btn-block">Cancelar</a>
