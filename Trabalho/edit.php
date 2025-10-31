@@ -22,14 +22,14 @@ if (!$filme) {
 $uploadDir = "Capa de Filmes/";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $titulo = trim($_POST['titulo'] ?? $filme['titulo']);
-    $diretor = trim($_POST['diretor'] ?? $filme['diretor']);
-    $ano = intval($_POST['ano'] ?? $filme['ano']);
-    $categoria = trim($_POST['categoria'] ?? $filme['categoria']);
-    $available = isset($_POST['available']) ? intval($_POST['available']) : $filme['available'];
+    $titulo = trim($_POST['titulo']);
+    $diretor = trim($_POST['diretor']);
+    $ano = intval($_POST['ano']);
+    $categoria = trim($_POST['categoria']);
+    $available = intval($_POST['available']); // valor do select (0 ou 1)
 
-    // Tratamento da imagem
-    $imagens = $filme['imagens']; // Mantém a imagem antiga por padrão
+    // Imagem
+    $imagens = $filme['imagens']; // mantém a antiga por padrão
     if (isset($_FILES['imagens']) && $_FILES['imagens']['error'] === 0) {
         $fileTmpPath = $_FILES['imagens']['tmp_name'];
         $fileName = basename($_FILES['imagens']['name']);
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $newFileName = uniqid() . "." . $fileExt;
             $destPath = $uploadDir . $newFileName;
             if (move_uploaded_file($fileTmpPath, $destPath)) {
-                // Apaga a imagem antiga se existir
+                // apaga imagem antiga
                 if ($filme['imagens'] && file_exists($uploadDir . $filme['imagens'])) {
                     unlink($uploadDir . $filme['imagens']);
                 }
@@ -52,15 +52,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 exit();
             }
         } else {
-            $_SESSION['message'] = "Formato de imagem inválido. Use jpg, jpeg, png ou gif.";
+            $_SESSION['message'] = "Formato de imagem inválido (use jpg, jpeg, png ou gif).";
             $_SESSION['message_type'] = "danger";
             header("Location: Lista.php");
             exit();
         }
     }
 
+    // Corrigido o tipo de dados no bind_param:
+    // s = string, i = inteiro
     $stmt = $conn->prepare("UPDATE filmes SET titulo=?, diretor=?, ano=?, categoria=?, available=?, imagens=? WHERE id=?");
-    $stmt->bind_param("ssisisi", $titulo, $diretor, $ano, $categoria, $available, $imagens, $id);
+    $stmt->bind_param("ssisssi", $titulo, $diretor, $ano, $categoria, $available, $imagens, $id);
 
     if ($stmt->execute()) {
         $_SESSION['message'] = "Filme atualizado com sucesso!";
@@ -88,7 +90,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     .navbar { background-color: #e50914 !important; }
     .card { background-color: #1c1c1c; border: none; color: white; }
     .btn-save { background-color: #e50914; border: none; }
-    img { max-width: 150px; margin-bottom: 10px; }
+    img { max-width: 150px; margin-bottom: 10px; border-radius: 8px; }
+    label { font-weight: bold; }
 </style>
 </head>
 <body>
@@ -113,7 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <input type="number" name="ano" class="form-control" value="<?= htmlspecialchars($filme['ano']) ?>" required>
             </div>
             <div class="form-group">
-                <label>Categoria</label>
+                <label>Gênero</label>
                 <input type="text" name="categoria" class="form-control" value="<?= htmlspecialchars($filme['categoria']) ?>">
             </div>
             <div class="form-group">
