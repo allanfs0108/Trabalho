@@ -2,7 +2,7 @@
 session_start();
 if(isset($_SESSION['user_id'])){
     // Se já estiver logado, redireciona para a página principal
-    header("Location: Principal.php");
+    header("Location: Perfil.php");
     exit();
 }
 ?>

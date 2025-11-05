@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Login bem-sucedido
             $_SESSION['user_id'] = $id;
             $_SESSION['email'] = $email;
-            header("Location: Principal.php");
+            header("Location: Perfil.php");
             exit();
         } else {
             $_SESSION['message'] = "Senha incorreta";
