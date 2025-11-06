@@ -49,8 +49,8 @@ try {
         $_SESSION['message'] = "Cadastro realizado com sucesso!";
         $_SESSION['message_type'] = "success";
 
-        // Redireciona direto para Principal.php
-        header("Location: Principal.php");
+        // Redireciona direto para Perfil.php
+        header("Location: Perfil.php");
         exit();
     } else {
         throw new Exception("Erro ao cadastrar usuário: " . $stmt->error);

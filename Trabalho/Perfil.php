@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Netflix Fake</title>
+  <title>Netflix</title>
   <style>
     body {
       background-color: black;
@@ -31,11 +31,17 @@
       /* largura menor para a imagem de perfis */
       height: auto;
     }
+
+    .seta{
+      width: 80px;
+      posi
+    }
   </style>
 </head>
 
 <body>
   <br><br><br><br><br>
+<a href="login.php"><img src="imagens/Seta.png" width="80px" alt="" class="seta"></a>
   <!-- Logo em cima -->
   <div class="logo">
     <img src="imagens/netflix logo.png" alt="Logo Netflix">

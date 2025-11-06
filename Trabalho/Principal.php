@@ -19,7 +19,7 @@ if (!isset($_SESSION['user_id'])) {
 
     <div class="top-bar">
         <a href="Perfil.php"><img src="imagens/Dantley.png" alt="Logo" class="logo"></a>
-        <img src="imagens/barra.webp" alt="Barra de pesquisa" class="barra">
+        <img src="imagens/netflix logo.png" alt="Barra de pesquisa" class="barra">
         <a href="Lista.php" class="btn-lista">
             <img src="imagens/Mais.png" alt="Adicionar" class="mais">
         </a>

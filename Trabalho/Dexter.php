@@ -38,7 +38,7 @@
         <h3>Episódios</h3>
         <div class="episodios-grid">
             <div class="ep">
-                <img src="imagens/ep 1.jpg" alt="Episódio 1">
+                <a href="Ep1.php"><img src="imagens/ep 1.jpg" alt="Episódio 1"></a>
                 <p>1. Dexter</p>
             </div>
             <div class="ep">

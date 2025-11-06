@@ -19,8 +19,8 @@ if (!isset($_SESSION['user_id'])) {
 
     <div class="top-bar">
         <a href="Perfil.php"><img src="imagens/John.png" alt="Logo" class="logo"></a>
-        <img src="imagens/barra.webp" alt="Barra de pesquisa" class="barra">
-        <a href="Lista.php" class="btn-lista">
+        <img src="imagens/netflix logo.png" alt="Barra de pesquisa" class="barra">
+        <a href="Lista2.php" class="btn-lista">
             <img src="imagens/Mais.png" alt="Adicionar" class="mais">
         </a>
     </div>
@@ -28,8 +28,8 @@ if (!isset($_SESSION['user_id'])) {
     <section class="categoria">
         <h1>Ação e aventura</h1>
         <div class="grid">
-            <a href="" class="grid-item-link"><img src="imagens/alerta.jpg" alt="Dexter"></a>
-            <a href="" class="grid-item-link"><img src="imagens/rebel.jpg" alt="Brooklyn 99"></a>
+            <a href="" class="grid-item-link"><img src="imagens/alerta.jpg" alt=""></a>
+            <a href="" class="grid-item-link"><img src="imagens/rebel.jpg" alt=""></a>
             <a href=""><img src="imagens/VeF.png" alt="Wandinha"></a>
             <a href=""><img src="imagens/army.jpg" alt="The Office"></a>
             <a href=""><img src="imagens/jumanji.jpg" alt="Stranger Things"></a>
