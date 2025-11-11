@@ -34,14 +34,16 @@
 
     .seta{
       width: 80px;
-      posi
+      position: absolute;
+      left: 20px;
+      bottom: 850px;
     }
   </style>
 </head>
 
 <body>
   <br><br><br><br><br>
-<a href="login.php"><img src="imagens/Seta.png" width="80px" alt="" class="seta"></a>
+<a href="logout.php"><img src="imagens/Seta.png" width="80px" alt="" class="seta"></a>
   <!-- Logo em cima -->
   <div class="logo">
     <img src="imagens/netflix logo.png" alt="Logo Netflix">

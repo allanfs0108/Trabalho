@@ -30,10 +30,10 @@ if (!isset($_SESSION['user_id'])) {
         <div class="grid">
             <a href="Dexter.php" class="grid-item-link"><img src="imagens/dexter.jpg" alt="Dexter"></a>
             <a href="Brooklyn.php" class="grid-item-link"><img src="imagens/b99.jpg" alt="Brooklyn 99"></a>
-            <a href=""><img src="imagens/wandinha.webp" alt="Wandinha"></a>
-            <a href=""><img src="imagens/office.webp" alt="The Office"></a>
-            <a href=""><img src="imagens/stranger.jpg" alt="Stranger Things"></a>
-            <a href=""><img src="imagens/breaking.jpg" alt="Breaking Bad"></a>
+            <a href="Wandinha.php"><img src="imagens/wandinha.webp" alt="Wandinha"></a>
+            <a href="Office.php"><img src="imagens/office.webp" alt="The Office"></a>
+            <a href="Stranger Things.php"><img src="imagens/stranger.jpg" alt="Stranger Things"></a>
+            <a href="Breaking Bad.php"><img src="imagens/breaking.jpg" alt="Breaking Bad"></a>
         </div>
     </section>
 
