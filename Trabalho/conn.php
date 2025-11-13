@@ -41,4 +41,15 @@ CREATE TABLE IF NOT EXISTS users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )
 ");
+
+$conn->query("
+CREATE TABLE IF NOT EXISTS imagens (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome_arquivo VARCHAR(255) NOT NULL,
+    caminho VARCHAR(255) NOT NULL,
+    avaible VARCHAR(255) NOT NULL,
+    imagens VARCHAR(255) NOT NULL,
+    upload_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)
+");
 ?>

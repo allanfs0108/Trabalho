@@ -1,0 +1,42 @@
+
+-- Cria o banco de dados
+CREATE DATABASE IF NOT EXISTS netflix
+  DEFAULT CHARACTER SET utf8mb4
+  COLLATE utf8mb4_0900_ai_ci;
+
+-- Usa o banco criado
+USE netflix;
+
+-- Criação da tabela de filmes
+CREATE TABLE `filmes` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(255) NOT NULL,
+  `diretor` varchar(255) NOT NULL,
+  `ano` int NOT NULL,
+  `categoria` varchar(255) DEFAULT NULL,
+  `available` tinyint(1) DEFAULT '1',
+  `imagens` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Criação da tabela de imagens
+CREATE TABLE `imagens` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nome_arquivo` varchar(255) NOT NULL,
+  `caminho` varchar(255) NOT NULL,
+  `tipo` varchar(50) DEFAULT NULL,
+  `tamanho` int DEFAULT NULL,
+  `upload_em` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Criação da tabela de usuários
+CREATE TABLE `users` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

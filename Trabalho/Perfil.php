@@ -61,6 +61,7 @@
       <area shape="rect" coords="803,90,966,251" href="Steven.php" alt="Quadrado clicável">
 
     </map>
+    <h1 style="color: white;">Site feito por: Allan</h1>
   </div>
 </body>
 
