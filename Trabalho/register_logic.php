@@ -59,7 +59,7 @@ try {
 } catch (Exception $e) {
     $_SESSION['message'] = $e->getMessage();
     $_SESSION['message_type'] = "danger";
-    header("Location: register_form.php"); // página do formulário de registro
+    header("Location: register.php"); // página do formulário de registro
     exit();
 } finally {
     $conn->close();
